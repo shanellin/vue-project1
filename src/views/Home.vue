@@ -33,7 +33,7 @@ export default {
     return {
       carouselIMG:['http://www.d852.com/uploads/tuku/87439/vwhmsdv5z4v.jpg',
        'https://50plus.cwgv.com.tw/public/upload/articles/39/9339/preview/9339.png',
-       'http://img3.xiazaizhijia.com/walls/20151202/1440x900_4a7370efa9456ca.jpg']
+       'http://www.hl.gov.tw/ezfiles/1/1001/pictures/plugin/o_hl/ohl_ohlpic_623_5393092_35790.jpg']
     };
   },
   created: function () {

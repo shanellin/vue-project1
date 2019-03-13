@@ -2,23 +2,23 @@
   <div id="introduce" class="main-content" :style="{marginTop:mainMarginTop + 'px'}">
     <section class="section-self w-100">
       <div class="self-pic"></div>
-      <div class="self-word">If you found your ability doesn't enough to cover something,<br> just slow down and learn more.</div>
+      <div class="self-word">If you found your ability doesn't enough to handle something,<br> just slow down and learn more.</div>
     </section>
     <section class="sec2">
-      <div class="sec2-pic col-12 col-sm-4">
+      <div class="sec2-pic col-12 col-sm-12 col-lg-4">
         <div class="">
 
         </div>
       </div>
-      <div class="sec2-describe col-12 col-sm-8">
+      <div class="sec2-describe col-12 col-sm-12 col-lg-8">
 
       </div>
     </section>
     <section class="sec3">
-      <div class="sec3-describe col-12 col-sm-8">
+      <div class="sec3-describe col-12 col-sm-12 col-lg-8">
 
       </div>
-      <div class="sec3-pic col-12 col-sm-4">
+      <div class="sec3-pic col-12 col-sm-12 col-lg-4">
         <div class="">
 
         </div>
@@ -36,7 +36,7 @@
           </div>
           <div class="inner_title m-1">{{item.title}}</div>
           <div class="inner_text w-100">
-            <span class="badge badge-primary p-2 mx-1" v-for="(inItem, inIndex) in item.skill">{{inItem}}</span>
+            <span class="badge badge-primary p-2 m-1" v-for="(inItem, inIndex) in item.skill">{{inItem}}</span>
           </div>
         </div>
       </div>
@@ -52,7 +52,8 @@ export default {
       mainMarginTop:parseInt($('#nav').height()),
       //右側框內容
       sec4_data:[{pic:'', skill:['vue.js', 'vue-cli', 'vue-router', 'vuex'], title:'Vue框架'},
-                 {pic:'', skill:['Restful-API', 'router'], title:'Node.js'}, {pic:'', skill:[], title:'畫面渲染&模板'}]
+                 {pic:'', skill:['ejs', 'html5', 'css3', 'js-es6', 'jquery', 'sass', 'vue', 'bootstrap'], title:'畫面渲染&模板'},
+                 {pic:'', skill:['Restful-API', 'router', 'gulp', '爬蟲'], title:'Node.js'}]
     };
   },
   created: function () {
@@ -105,11 +106,11 @@ export default {
       font-size: 25px
       margin-top: 7%
   .sec2, .sec3
-    height: 500px
+    height: 800px
     width: 100%
-    display: inline-flex
+    display: flex
     > div
-      height: 100%
+      height: 50%
     .sec2-pic, .sec3-pic
       display: flex
       > div
@@ -140,7 +141,7 @@ export default {
         font-size: 18px
         color: rgb(153, 153, 153)
     .sec4-pic
-      display: inline-flex
+      display: block
       width: 100%
       height: 400px
       > div
@@ -166,4 +167,30 @@ export default {
           height: 200px
           padding: 10px
           font-size: 20px
+  @media (max-width: 465px)
+    .section-self
+      .self-pic
+        margin-top: 17%
+    .sec3
+      .sec3-describe
+        order: 2
+      .sec3-pic
+        order: 1
+  @media (min-width: 465px) and (max-width: 924px)
+    .section-self
+      .self-pic
+        margin-top: 17%
+    .sec3
+      .sec3-describe
+        order: 2
+      .sec3-pic
+        order: 1
+  @media (min-width: 924px)
+    .sec2, .sec3
+      height: 500px
+      display: inline-flex
+      > div
+        height: 100%
+    .sec4-pic
+      display: inline-flex
 </style>

@@ -10,22 +10,22 @@ export default new Router({
     {
       path: '/',
       name: 'home',
-      component: () => import('./views/Home.vue')
+      component: () => import('./components/Home.vue')
     },
     {
       path: '/login',
       name: 'login',
-      component: () => import('./views/login.vue')
+      component: () => import('./components/login.vue')
     },
     {
       path: '/about',
       name: 'about',
-      component: () => import('./views/About.vue')
+      component: () => import('./components/About.vue')
     },
     {
       path: '/article',
       name: 'article',
-      component: () => import('./views/article.vue')
+      component: () => import('./components/article.vue')
     }
   ]
 })

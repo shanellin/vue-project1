@@ -68,35 +68,35 @@
   </div>
 </template>
 <script>
-import { mapState } from 'vuex';
+import { mapState } from 'vuex'
 import social_link from '@/components/link.vue'
 export default {
   components: {
     'socialLink': social_link
   },
-  data() {
+  data () {
     return {
-      //右側框內容
-      sec4_data:[{pic:require('../assets/vue.png'), skill:['vue.js', 'vue-cli', 'vue-router', 'vuex'], title:'Vue框架'},
-                 {pic:require('../assets/mix.png'), skill:['ejs', 'html5', 'css3', 'js-es6', 'jquery', 'sass', 'vue', 'bootstrap'], title:'前端框架&模板'},
-                 {pic:require('../assets/node-js-icon.png'), skill:['Restful-API', 'router', 'gulp', '爬蟲'], title:'Node.js'}]
-    };
+      // 右側框內容
+      sec4_data: [{ pic: require('../assets/vue.png'), skill: ['vue.js', 'vue-cli', 'vue-router', 'vuex'], title: 'Vue框架' },
+                  { pic: require('../assets/mix.png'), skill: ['ejs', 'html5', 'css3', 'js-es6', 'jquery', 'sass', 'vue', 'bootstrap'], title: '前端框架&模板' },
+                  { pic: require('../assets/node-js-icon.png'), skill: ['Restful-API', 'router', 'gulp', '爬蟲'], title: 'Node.js' }]
+    }
   },
   created: function () {
-    const that = this;
-    DocStyle('nav').backgroundColor = `rgba(${0}, ${0}, ${0}, ${0.82})`;
+    const that = this
+    DocStyle('nav').backgroundColor = `rgba(${0}, ${0}, ${0}, ${0.82})`
   },
-  watch:{
+  watch: {
   },
   methods: {
   },
   computed: {
     ...mapState(['introduce'])
   },
-  mounted(){
-    const that = this;
+  mounted () {
+    const that = this
   }
-};
+}
 </script>
 <style media="screen" lang="sass">
   $person-pic-size: 180px

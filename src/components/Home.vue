@@ -61,30 +61,30 @@ export default {
   data() {
     return {
       carouselIMG:['http://www.d852.com/uploads/tuku/87439/vwhmsdv5z4v.jpg'],
-      introduce_cards:[[{text:'BlueNet首頁-三大平台(Android、ios、Web&Line)功能簡介', pic:require( '../assets/bn_main.png')}, {text:'', pic:require( '../assets/logo.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}],
-                      [{text:'', pic:require( '../assets/web02_0.png')}, {text:'', pic:require( '../assets/colorful.jpg')}, {text:'', pic:require( '../assets/logo.png')}],
-                      [{text:'', pic:require( '../assets/logo.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}, {text:'', pic:require( '../assets/colorful.jpg')}]],
+      introduce_cards:[[{text:'BlueNet首頁-三大平台(Android、ios、Web&Line)功能簡介', pic:require( '../assets/bn_main.png')}, {text:'', pic:require( '../assets/traffic.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}],
+                      [{text:'', pic:require( '../assets/web02_0.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}, {text:'', pic:require( '../assets/logo.png')}],
+                      [{text:'', pic:require( '../assets/schedule.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}, {text:'', pic:require( '../assets/colorful.jpg')}]],
       introduce_link:[{text:'LineBot', pic:require( '../assets/line.png')}, {text:'LinkedIn', pic:require( '../assets/linkedin.png')},
                       {text:'github', pic:require( '../assets/git.jpg')}, {text:'gmail', pic:require( '../assets/gmail.jpg')}],
       introduce_text:[{title:'editor', content:'目前主要用來開發的編輯器是Atom，選擇它的緣由 : <br><br>現代化的介面、強大的第三方套件、對開發者的友善，或許它有著先天的缺陷，但卻無法掩蓋它的魅力。', pic:require( '../assets/atom.jpg')},
                       {title:'github', content:'目前實驗室的Web是單人開發但我git的習慣是分成三個分支(master、dev、個人分支)、主要是希望能保持階段性開發。<br>1. 個人分支；能無時無刻git自己的分支<br>2. dev:發佈正式版前模擬測試<br>3. master:dev測試完成，正式發佈。', pic:require( '../assets/git.jpg')},
                       {title:'nodejs', content:'目前Web、linebot、爬蟲的建置都是使用nodejs做設置。', pic:require( '../assets/node-js-icon.png')}]
-    };
+    }
   },
   created: function () {
     // `this` points to the vm instance
     console.log('a is: ' + this.a)
   },
   methods: {
-    order() {
+    order () {
     }
   },
-  mounted(){
+  mounted () {
     // $('.carousel').carousel({
     //   interval: 3000
     // })
   }
-};
+}
 </script>
 <style media="screen" lang="sass">
   $body-color: #4d5968
@@ -219,7 +219,6 @@ export default {
     .card
       overflow: hidden
       width: 18rem
-      margin: auto
     .card:hover
       +animation(introduce_cards_hover 1s)
       animation-fill-mode: forwards

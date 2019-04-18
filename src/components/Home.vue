@@ -71,9 +71,9 @@ export default {
                       {title:'nodejs', content:'目前Web、linebot、爬蟲的建置都是使用nodejs做設置。', pic:require( '../assets/node-js-icon.png')}]
     }
   },
-  created: function () {   
+  created: function () {
     // `this` points to the vm instance
-    console.log('a is: ' + this.a)
+    console.log('a is: ' + this.a) 
   },
   methods: {
     order () {

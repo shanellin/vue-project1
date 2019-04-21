@@ -71,7 +71,7 @@ export default {
                       {title:'nodejs', content:'目前Web、linebot、爬蟲的建置都是使用nodejs做設置。', pic:require( '../assets/node-js-icon.png')}]
     }
   },
-  created: function () {
+  created: function () { 
   },
   methods: {
     order () {

@@ -74,10 +74,10 @@ export default {
   created: function () {
   },
   methods: {
-    order () { 
+    order () {
     }
   },
-  mounted () {
+  mounted () { 
     // $('.carousel').carousel({
     //   interval: 3000
     // })

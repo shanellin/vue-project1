@@ -72,8 +72,6 @@ export default {
     }
   },
   created: function () {
-    // `this` points to the vm instance
-    console.log('a is: ' + this.a) 
   },
   methods: {
     order () {

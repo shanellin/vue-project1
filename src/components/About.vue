@@ -150,16 +150,17 @@ export default {
         border-radius: $sec-pic-size / 2
         border: 1px solid white
         background: transparent
-        background-image: url('../assets/wood.jpeg')
         background-repeat: no-repeat
         background-position: center
         background-size: cover
     .sec2-pic
       > div
         box-shadow: 0px 0px 0px 7px #fff, 0px 0px 0px 8px rgba(0, 0, 0, 0.3)
+        background-image: url('../assets/shane2.jpg')
     .sec3-pic
       > div
         box-shadow: 0px 0px 0px 7px #3498db, 0px 0px 0px 8px rgba(255, 255, 255, 0.3)
+        background-image: url('../assets/shane3.png')
     .sec2-describe, .sec3-describe
       display: flex
       flex-wrap: wrap

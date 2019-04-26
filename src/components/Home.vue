@@ -20,9 +20,10 @@
     <section class="introduce_text px-1 px-sm-1 px-md-5 py-5">
       <div class="inner">
         <ul class="feature">
-          <li class="col-12 col-sm-12 col-md-10" v-for="(item, index) in introduce_text">
-            <h3 class="col-12 col-sm-4"><img :src="item.pic" alt="title圖">{{item.title}}</h3>
-            <p class="col-12 col-sm-8 pt-2 pt-sm-0" v-html="item.content"></p>
+          <li class="col-12 col-sm-12 col-lg-4" v-for="(item, index) in introduce_text">
+            <h3 class="col-12 col-sm-12"><img :src="item.pic" alt="title圖">{{item.title}}</h3>
+            <hr align="left">
+            <p class="col-12 col-sm-12" v-html="item.content"></p>
           </li>
         </ul>
       </div>
@@ -38,12 +39,14 @@
       <h4>these are some introductions about my results.</h4>
       <hr>
       <div class="col-12 col-sm-4 pointer" v-for="(item, index) in introduce_cards">
-        <div class="card mb-3" v-for="(item_in, index_in) in item">
-          <img class="card-img-top" :src="item_in.pic" alt="Card image cap">
-          <div class="card-body">
-            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        <a v-for="(item_in, index_in) in item" :href="'https://'+item_in.url" target="_blank">
+          <div class="card mb-3">
+            <img class="card-img-top" :src="item_in.pic" alt="Card image cap">
+            <div class="card-body">
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+            </div>
           </div>
-        </div>
+        </a>
       </div>
     </section>
     <socialLink></socialLink>
@@ -61,9 +64,9 @@ export default {
   data() {
     return {
       carouselIMG:['http://www.d852.com/uploads/tuku/87439/vwhmsdv5z4v.jpg'],
-      introduce_cards:[[{text:'BlueNet首頁-三大平台(Android、ios、Web&Line)功能簡介', pic:require( '../assets/bn_main.png')}, {text:'', pic:require( '../assets/traffic.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}],
-                      [{text:'', pic:require( '../assets/web02_0.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}, {text:'', pic:require( '../assets/logo.png')}],
-                      [{text:'', pic:require( '../assets/schedule.png')}, {text:'', pic:require( '../assets/purpleful.jpg')}, {text:'', pic:require( '../assets/colorful.jpg')}]],
+      introduce_cards:[[{text:'BlueNet首頁-三大平台(Android、ios、Web&Line)功能簡介', pic:require( '../assets/bn_main.png'), url:'www.bluenet-ride.com'}, {text:'', pic:require( '../assets/traffic.png'), url:"www.bluenet-ride.com/introduce_Traffic"}],
+                      [{text:'', pic:require( '../assets/web02_0.png'), url:"www.bluenet-ride.com/introduce_Taxi"}, {text:'', pic:require( '../assets/information.png'), url:"www.bluenet-ride.com/introduce_Service"}],
+                      [{text:'', pic:require( '../assets/schedule.png'), url:"www.bluenet-ride.com/introduce_Schedule"}, {text:'', pic:require( '../assets/drug.png'), url:"play.google.com/store/apps/details?id=com.biovlsi.shane.drugs_new"}]],
       introduce_link:[{text:'LineBot', pic:require( '../assets/line.png')}, {text:'LinkedIn', pic:require( '../assets/linkedin.png')},
                       {text:'github', pic:require( '../assets/git.jpg')}, {text:'gmail', pic:require( '../assets/gmail.jpg')}],
       introduce_text:[{title:'editor', content:'目前主要用來開發的編輯器是Atom，選擇它的緣由 : <br><br>現代化的介面、強大的第三方套件、對開發者的友善，或許它有著先天的缺陷，但卻無法掩蓋它的魅力。', pic:require( '../assets/atom.jpg')},
@@ -77,7 +80,7 @@ export default {
     order () {
     }
   },
-  mounted () { 
+  mounted () {
     // $('.carousel').carousel({
     //   interval: 3000
     // })
@@ -196,6 +199,9 @@ export default {
       border-color: rgb(238, 200, 125)
       border-width: 2px
   .introduce_cards
+    a
+      text-decoration: none
+      color: black
     display: inline-flex
     flex-wrap: wrap
     max-width: 68em
@@ -233,12 +239,13 @@ export default {
       margin-bottom: 0px
       li
         display: inline-flex
+        flex-wrap: wrap
         margin-bottom: 20px
         h3, p
           margin: auto
-          padding-left: 3em
           text-align: left
         h3
+          padding-left: 3em
           color: $body-color
           font-size: 1.25em
           font-weight: 700
@@ -253,9 +260,12 @@ export default {
             position: absolute
             left: 0px
         p
-          color: $content-color
+          color: #212529
           font-size: 100%
+          padding: 0px
+        hr
+          border-top: 1px solid #7e8895
+          width: 30%
       > li:nth-child(2), li:last-child
         padding-top: 20px
-        border-top: solid 2px rgba(144, 144, 144, 0.25)
 </style>

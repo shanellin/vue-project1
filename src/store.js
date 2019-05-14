@@ -31,9 +31,13 @@ export default new Vuex.Store({
       });
     },
     //後端get proxy代理
-    GetAPI(context, url){
+    GetAPI(context, req){
       return new Promise((resolve, reject) => {
-        axios.get(`${url}`)
+        axios.get(`${req.url}`, {
+          headers: {
+            Authorization: req.header
+          }
+        })
         .then((res) => {
           if (res.status == 200)
             resolve(res.data);

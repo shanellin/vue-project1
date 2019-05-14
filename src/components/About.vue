@@ -14,7 +14,19 @@
             <h3>熱血的大學時期</h3>
           </div>
           <div class="describe-body p-2 w-100" style="color:rgb(153, 153, 153)">
-            專題題目是全方位吃藥提醒與紀錄app，當時熱衷於android使持裝置開發，當中的樂趣與成果令我沉迷其中，並於2016年榮獲台大醫院雲林分院app競賽-金獎。
+            專題題目是全方位吃藥提醒與紀錄app，當時熱衷於android手持裝置開發，當中的樂趣與成果令我沉迷其中，並於2016年榮獲台大醫院雲林分院app競賽-金獎，
+            而此專題的主要理念為離線提醒與QR-Code掃描。
+            <br>
+            <br>
+            1. 離線提醒 :
+            <br>
+            是希望能保持使用者的隱私將其用藥紀錄只保存在本地端，並針對其用藥周期做出提醒。
+            <br>
+            <br>
+            2. QR-Code掃描 :
+            <br>
+            理念為，若能與各家醫院合作開發出屬於我們的QR-Code編碼，這樣使用者就可以省掉一堆瑣碎的輸入過程，目前有合作的醫院為
+            台大醫院體系，中山醫學大學附設醫院, 童綜合醫院, 成大醫院斗六分院。
             <br>
             <br>
             <a href="https://play.google.com/store/apps/details?id=com.biovlsi.shane.drugs_new"><img src="../assets/androidbtn.png" alt=""></a>
@@ -123,7 +135,7 @@ export default {
       right: 0
       margin-top: 7%
       background: transparent
-      background-image: url('../assets/wood.jpeg')
+      background-image: url('../assets/shane1.jpg')
       background-repeat: no-repeat
       background-position: center
       background-size: cover

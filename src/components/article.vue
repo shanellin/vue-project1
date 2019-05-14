@@ -21,8 +21,8 @@
           <h3 class="text-left pl-2">{{item.title}}</h3>
           <hr class="border-secondary" width="100%" align="left">
           <article class="right-article p-2 pl-sm-4" v-for="(item, index) in rightContent[index].content" :data-title="item.inTitle">
-            <h5 class="text-left rounded"><span class="badge badge-secondary p-2 px-sm-4" style="font-weight:normal">{{item.inTitle}}</span></h5>
-            <div class="w-90 ml-0.5 p-1 pl-3 pr-3 text-left border-left border-secondary" style="height:auto;">
+            <h3 class="text-left rounded"><span class="badge badge-secondary p-2 px-sm-4" style="font-weight:normal">{{item.inTitle}}</span></h3>
+            <div class="w-90 ml-0.5 p-1 pl-sm-3 pr-sm-3 text-left border-left border-secondary" style="height:auto;">
               <span class="w-100 font-weight-bold articleFont-title">運用技術 :
                 <span class="badge badge-pill badge-warning text-dark p-2 px-3 font-weight-bold mr-1" style="font-weight:normal" v-for="(item, index) in item.inSkill">{{item}}</span>
               </span>
@@ -30,13 +30,13 @@
               <div class="w-100 font-weight-bold articleFont-title">功能說明 :</div>
               <div class="w-100 d-sm-flex">
                 <div class="flexslider w-100 d-flex">
-                  <ul class="slides m-auto">
+                  <ul class="slides m-auto fn_pic">
                     <li><img src="../assets/logo.png" alt="" width="350" height="250"></li>
                     <li><img src="../assets/logo.png" alt="" width="350" height="250"></li>
                     <li><img src="../assets/logo.png" alt="" width="350" height="250"></li>
                   </ul>
                 </div>
-                <div class="col-12 col-sm-8 articleFont-content" v-html="item.inContent"></div>
+                <div class="col-12 col-sm-8 articleFont-content fn_explain" v-html="item.inContent"></div>
               </div>
             </div>
           </article>
@@ -60,11 +60,11 @@ export default {
       left_Hover:{num:0, compensate:[0, 1, 7, 13]},
       //左側欄
       leftNavigation:[{title:'安排行程功能', content:['行事曆']},{title:'交通工具功能', content:['計程車','大眾運輸','公車','捷運','火車/高鐵','腳踏車']}
-      ,{title:'資訊服務功能', content:['新聞','美食','景點','住宿','電視台','其餘功能']}],
+      ,{title:'資訊服務功能', content:['新聞','美食','景點','住宿','電視台']}],
       //右側欄
       rightContent:[{title:'安排行程功能', content:[{inTitle:'行事曆', inSkill:[], inContent:''}]},{title:'交通工具功能', content:[{inTitle:'計程車', inSkill:[], inContent:''},{inTitle:'大眾運輸', inSkill:[], inContent:''},{inTitle:'公車', inSkill:[], inContent:''},
                     {inTitle:'捷運', inSkill:[], inContent:''},{inTitle:'火車/高鐵', inSkill:[], inContent:''},{inTitle:'腳踏車', inSkill:[], inContent:''}]},{title:'資訊服務功能', content:[{inTitle:'新聞', inSkill:[], inContent:''},{inTitle:'美食', inSkill:[], inContent:''},{inTitle:'景點', inSkill:[], inContent:''},
-                    {inTitle:'住宿', inSkill:[], inContent:''},{inTitle:'電視台', inSkill:[], inContent:''},{inTitle:'其餘功能', inSkill:[], inContent:''}]}]
+                    {inTitle:'住宿', inSkill:[], inContent:''},{inTitle:'電視台', inSkill:[], inContent:''}]}]
     };
   },
   created: function () {
@@ -136,7 +136,7 @@ export default {
         return `功能主軸 :<br><div class="pl-4 py-1 py-sm-2">${this.contentMake()}</div>`;
       }
       get hardContent(){
-        return `突破點 :<br><div class="pl-4 py-2">${this.contentMake()}</div>`;
+        return `學習成果 :<br><div class="pl-4 py-2">${this.contentMake()}</div>`;
       }
       get finalContent(){
         return `感想 :<br><div class="pl-4 py-2">${this.contentMake()}</div>`;
@@ -151,7 +151,7 @@ export default {
       }
     }
     let header = '', harder = '', final = '';
-    that.$store.dispatch('GetAPI', '/server/test').then((res) => {
+    that.$store.dispatch('GetAPI', {url: 'https://jsonbin.org/me/blog', header: 'token 55c86832-71e5-476c-a9fd-98719984352f'}).then((res) => {//'/server/test'
       for (let i = 0; i < res.data.length; i++) {
         for (let j = 0; j < res.data[i].item.length; j++) {
           header = new PerArticle(res.data[i].item[j].header);
@@ -168,11 +168,9 @@ export default {
         });
         //計算每個article離top的高度
         $('.right-article').each((index) => {
-          console.log('aaa');
           that.articleTop.push($('.right-article').eq(parseInt(index)).offset().top);
         })
       }, 500);
-      console.log(res);
     }).catch((err) => {
       console.log(err);
     });
@@ -185,6 +183,15 @@ export default {
   // @media (min-width: 924px)
   // .rightContent
   //   background: url("http://www.jituwang.com/uploads/allimg/130531/260202-1305310Q23651.jpg") fixed center
+  .fn_explain
+    margin: auto
+  .fn_pic
+    > li
+      > img
+        margin: auto
+        max-width: 240px
+  .flex-direction-nav a
+    height: 55px !important
   .left-column-select
     height: 70vh
     overflow-y: scroll
@@ -200,10 +207,12 @@ export default {
       margin: auto
   .backTop
     position: absolute
-    right: 30px
-    bottom: 15px
+    right: 5%
+    bottom: 5%
     width: 50px
     height: 50px
     z-index: 2
     background-color: rgb(241, 198, 45)
+  .flexslider
+    z-index: 0
 </style>

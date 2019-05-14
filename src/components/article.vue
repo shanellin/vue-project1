@@ -53,7 +53,7 @@ export default {
   data() {
     return {
       //公用
-      mainMarginTop:parseInt($('#nav').height()),
+      mainMarginTop:$('#navbarNavAltMarkup').css('display') !== 'none' ? parseInt($('#nav').height()) - parseInt($('#navbarNavAltMarkup').height()) : parseInt($('#nav').height()),
       columnHeight:`calc(100vh - ${parseInt($('#nav').height())}px)`,
       indexChinese:['一','二','三','四','五','六','七'],
       articleTop:[],

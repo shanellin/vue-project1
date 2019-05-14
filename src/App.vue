@@ -29,6 +29,7 @@
       },
       navActive(i){
         this.navBtnIndex = i;
+        $('.navbar-toggler').click();
       }
     },
     mounted(){

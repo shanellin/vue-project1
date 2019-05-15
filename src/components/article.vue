@@ -9,7 +9,7 @@
           </div>
         </div>
       </div>
-      <div class="w-80 ml-1" style="position:absolute;bottom:30px;">
+      <div class="w-80 ml-1" style="bottom:30px;">
         <h3 class="text-left font-weight-bold">{{introduce.name}}</h3>
         <h5 class="text-left">{{introduce.describe}}</h5>
       </div>
@@ -54,7 +54,7 @@ export default {
     return {
       //公用
       mainMarginTop:$('#navbarNavAltMarkup').css('display') !== 'none' ? parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]) : parseInt($('#nav').css('height').split('px')[0]),
-      columnHeight:`calc(100vh - ${parseInt($('#nav').height())}px)`,
+      columnHeight:`calc(100vh - ${parseInt($('#nav').css('height').split('px')[0])}px)`,
       indexChinese:['一','二','三','四','五','六','七'],
       articleTop:[],
       left_Hover:{num:0, compensate:[0, 1, 7, 13]},

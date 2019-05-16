@@ -1,6 +1,6 @@
 <template>
   <div id="main-content" class="main-content" :style="{marginTop:mainMarginTop + 'px'}">
-    <div class="left-column p-3 pt-3 pl-3 pl-sm-4 border-right border-secondary" :style="{minHeight:columnHeight}">
+    <div class="left-column p-3 pt-3 pl-3 pl-sm-4 border-right border-secondary" :style="{height:columnHeight}">
       <div class="left-column-select">
         <div class="w-80 ml-1 pt-1 mt-1" v-for="(item, index) in leftNavigation">
           <h5 class="text-center textOverflow finger border border-secondary rounded left-font-color py-1" :style="[((left_Hover.num >= left_Hover.compensate[index]) && (left_Hover.num < left_Hover.compensate[index+1])) ? {'background':'rgba(0, 0, 0, 0.82)','color':'white'} : '']" data-toggle="collapse" :href="'#collapseExample' + index">{{item.title}}</h5>

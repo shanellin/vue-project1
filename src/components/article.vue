@@ -9,7 +9,7 @@
           </div>
         </div>
       </div>
-      <div class="w-80 ml-1" style="bottom:30px;">
+      <div class="w-80 ml-1" style="bottom:30px;height:30%">
         <h3 class="text-left font-weight-bold">{{introduce.name}}</h3>
         <h5 class="text-left">{{introduce.describe}}</h5>
       </div>
@@ -43,7 +43,7 @@
         </div>
       </div>
     </div>
-    <div class="rounded backTop" @click="backToTop()">123</div>
+    <div class="rounded backTop" @click="backToTop()">456</div>
   </div>
 </template>
 <script>
@@ -194,7 +194,7 @@ export default {
   .flex-direction-nav a
     height: 55px !important
   .left-column-select
-    height: 70vh
+    height: 70%
     overflow-y: scroll
   .left-font-color:hover
     color: white

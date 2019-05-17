@@ -53,7 +53,8 @@ export default {
   data() {
     return {
       //公用
-      mainMarginTop:$('#navbarNavAltMarkup').css('display') !== 'none' ? parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]) : parseInt($('#nav').css('height').split('px')[0]),
+      mainMarginTop:$('#navbarNavAltMarkup').css('display') !== 'none' ? parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]) :
+      parseInt($('#nav').css('height').split('px')[0]),
       columnHeight:`calc(100vh - ${parseInt($('#nav').css('height').split('px')[0])}px)`,
       indexChinese:['一','二','三','四','五','六','七'],
       articleTop:[],

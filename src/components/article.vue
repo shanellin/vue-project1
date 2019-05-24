@@ -9,9 +9,11 @@
           </div>
         </div>
       </div>
-      <div class="w-80 ml-1" style="bottom:30px;height:30%">
-        <h3 class="text-left font-weight-bold">{{introduce.name}}</h3>
-        <h5 class="text-left">{{introduce.describe}}</h5>
+      <div class="w-80 ml-1" style="position:relative;bottom:30px;height:30%">
+        <div style="position:absolute;bottom:0px;width:100%;">
+          <h3 class="text-left font-weight-bold">{{introduce.name}}</h3>
+          <h5 class="text-left">{{introduce.describe}}</h5>
+        </div>
       </div>
       <div class="left-square" @click="LeftColumn_move()"></div>
     </div>
@@ -53,8 +55,7 @@ export default {
   data() {
     return {
       //公用
-      mainMarginTop:$('#navbarNavAltMarkup').css('display') !== 'none' ? parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]) :
-      parseInt($('#nav').css('height').split('px')[0]),
+      mainMarginTop: 0,
       columnHeight:`calc(100vh - ${parseInt($('#nav').css('height').split('px')[0])}px)`,
       indexChinese:['一','二','三','四','五','六','七'],
       articleTop:[],
@@ -80,6 +81,10 @@ export default {
           }
         }
       })
+      console.log(parseInt($('#nav').css('height').split('px')[0]));
+      console.log(parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]));
+      that.mainMarginTop = ($('#navbarNavAltMarkup').css('display') == 'none' || $('#navbarNavAltMarkup').css('display') == 'flex') ? parseInt($('#nav').css('height').split('px')[0]) :
+      parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]);
     })
   },
   watch:{
@@ -128,6 +133,8 @@ export default {
   },
   mounted(){
     const that = this;
+    console.log('a' + parseInt($('#nav').css('height').split('px')[0]));
+    console.log('a' + parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]));
     //每篇文章的內容
     class PerArticle {
       constructor(content){

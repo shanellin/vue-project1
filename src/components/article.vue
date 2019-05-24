@@ -72,6 +72,8 @@ export default {
   created: function () {
     const that = this;
     DocStyle('nav').backgroundColor = `rgba(${0}, ${0}, ${0}, ${0.82})`;
+    alert(`${parseInt($('#nav').css('height').split('px')[0])}px`);
+    console.log(`${parseInt($('#nav').css('height').split('px')[0])}px`);
     $(() => {
       $('.right-column').scroll(() => {
         for (let index in that.articleTop) {

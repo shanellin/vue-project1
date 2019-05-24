@@ -72,7 +72,6 @@ export default {
   created: function () {
     const that = this;
     DocStyle('nav').backgroundColor = `rgba(${0}, ${0}, ${0}, ${0.82})`;
-    alert(`${parseInt($('#nav').css('height').split('px')[0])}px`);
     console.log(`${parseInt($('#nav').css('height').split('px')[0])}px`);
     $(() => {
       $('.right-column').scroll(() => {
@@ -135,6 +134,7 @@ export default {
   },
   mounted(){
     const that = this;
+    alert(`${parseInt($('#nav').css('height').split('px')[0])}px`);
     console.log('a' + parseInt($('#nav').css('height').split('px')[0]));
     console.log('a' + parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]));
     //每篇文章的內容

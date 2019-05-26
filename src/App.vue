@@ -159,6 +159,8 @@
         margin-left: 254px
         border-radius: 999em
         top: calc(50vh - 30px)
+        img
+          height: 100%
     .right-column
       width: 100vw
     #navbarSupportedContent

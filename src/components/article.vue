@@ -15,7 +15,7 @@
           <h5 class="text-left">{{introduce.describe}}</h5>
         </div>
       </div>
-      <div class="left-square" @click="LeftColumn_move()"></div>
+      <div class="left-square" @click="LeftColumn_move()"><img :src="LeftRightPic" alt="左側欄進出"></div>
     </div>
     <div class="right-column" :style="{height:columnHeight, overflowY:'scroll'}">
       <div class="p-1 p-sm-3" style="width:100%;background-color:white">
@@ -38,14 +38,14 @@
                     <li><img src="../assets/logo.png" alt="" width="350" height="250"></li>
                   </ul>
                 </div>
-                <div class="col-12 col-sm-8 articleFont-content fn_explain" v-html="item.inContent"></div>
+                <div class="col-12 col-sm-8 articleFont-content fn_explain  px-0 px-sm-2" v-html="item.inContent"></div>
               </div>
             </div>
           </article>
         </div>
       </div>
     </div>
-    <div class="rounded backTop" @click="backToTop()">456</div>
+    <div class="rounded backTop" @click="backToTop()"><img src="../assets/up-arrow.png" alt="至頂"></div>
   </div>
 </template>
 <script>
@@ -63,6 +63,7 @@ export default {
       //左側欄
       leftNavigation:[{title:'安排行程功能', content:['行事曆']},{title:'交通工具功能', content:['計程車','大眾運輸','公車','捷運','火車/高鐵','腳踏車']}
       ,{title:'資訊服務功能', content:['新聞','美食','景點','住宿','電視台']}],
+      LeftRightPic:require( '../assets/arrow-right.png'),
       //右側欄
       rightContent:[{title:'安排行程功能', content:[{inTitle:'行事曆', inSkill:[], inContent:''}]},{title:'交通工具功能', content:[{inTitle:'計程車', inSkill:[], inContent:''},{inTitle:'大眾運輸', inSkill:[], inContent:''},{inTitle:'公車', inSkill:[], inContent:''},
                     {inTitle:'捷運', inSkill:[], inContent:''},{inTitle:'火車/高鐵', inSkill:[], inContent:''},{inTitle:'腳踏車', inSkill:[], inContent:''}]},{title:'資訊服務功能', content:[{inTitle:'新聞', inSkill:[], inContent:''},{inTitle:'美食', inSkill:[], inContent:''},{inTitle:'景點', inSkill:[], inContent:''},
@@ -72,7 +73,6 @@ export default {
   created: function () {
     const that = this;
     DocStyle('nav').backgroundColor = `rgba(${0}, ${0}, ${0}, ${0.82})`;
-    console.log(`${parseInt($('#nav').css('height').split('px')[0])}px`);
     $(() => {
       $('.right-column').scroll(() => {
         for (let index in that.articleTop) {
@@ -124,8 +124,10 @@ export default {
     LeftColumn_move(){
       if ($('.left-column').css('margin-left') == '0px') {
         $('.left-column').animate({marginLeft: '-300px'}, 500);
+        this.LeftRightPic = require( '../assets/arrow-right.png');
       } else {
         $('.left-column').animate({marginLeft: '0px'}, 500);
+        this.LeftRightPic = require( '../assets/arrow-left.png');
       }
     }
   },
@@ -213,13 +215,13 @@ export default {
     > img
       margin: auto
   .backTop
-    position: absolute
+    position: fixed
     right: 5%
     bottom: 5%
     width: 50px
     height: 50px
     z-index: 2
-    background-color: rgb(241, 198, 45)
+    background-color: transparent
   .flexslider
     z-index: 0
 </style>

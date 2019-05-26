@@ -154,7 +154,7 @@
         position: absolute
         height: 60px
         width: 60px
-        background-color: black
+        background-color: white
         display: block
         margin-left: 254px
         border-radius: 999em

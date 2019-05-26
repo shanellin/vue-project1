@@ -56,7 +56,7 @@ export default {
     return {
       //公用
       mainMarginTop: 0,
-      columnHeight:`calc(100vh - ${parseInt($('#nav').css('height').split('px')[0])}px)`,
+      columnHeight:0,
       indexChinese:['一','二','三','四','五','六','七'],
       articleTop:[],
       left_Hover:{num:0, compensate:[0, 1, 7, 13]},
@@ -82,11 +82,11 @@ export default {
           }
         }
       })
-      console.log(parseInt($('#nav').css('height').split('px')[0]));
-      console.log(parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]));
       that.mainMarginTop = ($('#navbarNavAltMarkup').css('display') == 'none' || $('#navbarNavAltMarkup').css('display') == 'flex') ? parseInt($('#nav').css('height').split('px')[0]) :
       parseInt($('#nav').css('height').split('px')[0]) - parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]);
+      that.columnHeight = `calc(100vh - ${that.mainMarginTop}px)`;
     })
+
   },
   watch:{
     'left_Hover.num': function(val){
@@ -134,9 +134,6 @@ export default {
   },
   mounted(){
     const that = this;
-    alert(`${parseInt($('#nav').css('height').split('px')[0])}px`);
-    console.log('a' + parseInt($('#nav').css('height').split('px')[0]));
-    console.log('a' + parseInt($('#navbarNavAltMarkup').css('height').split('px')[0]));
     //每篇文章的內容
     class PerArticle {
       constructor(content){

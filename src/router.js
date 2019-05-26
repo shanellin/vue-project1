@@ -30,20 +30,24 @@ export default new Router({
       children: [
       ]
     },
-      {
-        path: '/login',
-        name: 'login',
-        component: () => import('./components/login.vue')
-      },
-      {
-        path: '/about',
-        name: 'about',
-        component: () => import('./components/About.vue')
-      },
-      {
-        path: '/article',
-        name: 'article',
-        component: () => import('./components/article.vue')
-      }
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('./components/login.vue')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: () => import('./components/About.vue')
+    },
+    {
+      path: '/article',
+      name: 'article',
+      component: () => import('./components/article.vue')
+    },
+    {
+      path: "*",
+      redirect: "/"
+    }
   ]
 })

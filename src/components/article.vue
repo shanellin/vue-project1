@@ -221,7 +221,7 @@ export default {
     width: 50px
     height: 50px
     z-index: 2
-    background-color: transparent
+    background-color: white
     img
       height: 100%
   .flexslider
